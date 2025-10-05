@@ -44,7 +44,7 @@ public:
                 loadFromFile();
                 return true;
             } else {
-                cout << "❌ Incorrect admin password!\n";
+                cout << " Incorrect admin password!\n";
                 return false;
             }
         } else {
@@ -53,7 +53,7 @@ public:
             ofstream out(vaultFile);
             out << encrypt(adminPassword) << "\n";
             out.close();
-            cout << "✅ Admin password created successfully!\n";
+            cout << " Admin password created successfully!\n";
             return true;
         }
     }
@@ -68,7 +68,7 @@ public:
         getline(cin, acc.password);
         accounts.push_back(acc);
         saveToFile();
-        cout << "✅ Account saved successfully!\n";
+        cout << " Account saved successfully!\n";
     }
 
     void viewAccounts() const {
@@ -78,9 +78,9 @@ public:
         }
         cout << "\n--- STORED ACCOUNTS ---\n";
         for (const auto& acc : accounts) {
-            cout << "🌐 Site: " << acc.site
-                 << " | 👤 User: " << acc.username
-                 << " | 🔑 Pass: " << acc.password << "\n";
+            cout << " Site: " << acc.site
+                 << " |  User: " << acc.username
+                 << " | Pass: " << acc.password << "\n";
         }
     }
 
@@ -92,11 +92,11 @@ public:
             if (it->site == site) {
                 accounts.erase(it);
                 saveToFile();
-                cout << "🗑️ Account deleted successfully!\n";
+                cout << "Account deleted successfully!\n";
                 return;
             }
         }
-        cout << "❌ No account found for that site.\n";
+        cout << " No account found for that site.\n";
     }
 
 private:
@@ -147,7 +147,7 @@ int main() {
         else if (choice == "2") pm.viewAccounts();
         else if (choice == "3") pm.deleteAccount();
         else if (choice == "4") {
-            cout << "👋 Exiting... Have a great day!\n";
+            cout << "Exiting... Have a great day! thank you\n";
             break;
         }
         else cout << "Invalid choice! Try again.\n";
